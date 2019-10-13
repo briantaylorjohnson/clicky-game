@@ -10,11 +10,15 @@ function Cards({children})
 function Card({
     id,
     name,
-    url
-}) {
+    url,
+    randomizer,
+    gameLogic,
+    clicker = () => {randomizer(); gameLogic(id); }
+}) 
+{
     return (
                     <div className ="mt-1 mb-1 mr-1 ml-1 pr-1 pl-1 pt-1 pb-1 border border-warning">
-                        <img className="card-char" src={url} alt={name}></img>
+                        <img className="card-char" src={url} alt={name} onClick={clicker}></img>
                     </div>
 
     );
