@@ -1,6 +1,5 @@
 import React from "react";
 import "./Card.css";
-import { Container, Row, Col } from "../Grid";
 
 function Cards({children})
 {
@@ -17,10 +16,11 @@ function Card({
 }) 
 {
     return (
-                    <div className ="mt-1 mb-1 mr-1 ml-1 pr-1 pl-1 pt-1 pb-1 border border-warning">
-                        <img className="card-char" src={url} alt={name} onClick={clicker}></img>
+                <div className="col-md-3">
+                    <div className ="text-center mr-1 ml-1 mb-4">
+                        <img className="card-char border border-warning" src={url} alt={name} onClick={clicker}></img>
                     </div>
-
+                </div>
     );
 }
 

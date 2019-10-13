@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import './App.css';
 import Nav from "./components/Nav";
+import Messages from "./components/Messages";
+import Scoreboard from "./components/Scoreboard";
 import {Cards, Card} from "./components/Card";
 import cards from "../src/cards.json"
-import { Container, Row, Col } from "./components/Grid";
 
 class App extends Component
 {
@@ -11,8 +12,9 @@ class App extends Component
   {
     cards,
     score: 0,
+    topScore: 0,
     clickedCards: [],
-    copy: "",
+    copy: "Welcome! Try to click all the cards without repeating. Click a card to start the game...",
   };
   
   randomizer = id =>
@@ -37,6 +39,14 @@ class App extends Component
       let updatedScore = this.state.score + 1;
       this.setState({score: updatedScore});
 
+      if (updatedScore > this.state.topScore)
+      {
+        this.setState(
+        {
+          topScore: updatedScore
+        });
+      }
+
       console.log("New Score: " + updatedScore);
       if (updatedScore === 12)
       {
@@ -45,16 +55,38 @@ class App extends Component
         {
           score: 0,
           clickedCards: [],
+          topScore: 0,
           copy: "Hooray! You are back to your new self again -- a winnner!"
         });
       }
 
       else
       {
-        this.setState(
+        let successMessage = Math.round(Math.random()*3);
+
+        if (successMessage === 1)
         {
-          copy: "That's great pick! Toad would be proud."
-        });
+          this.setState(
+          {
+            copy: "That's great pick! Toad would be proud."
+          });
+        }
+
+        else if (successMessage === 2)
+        {
+          this.setState(
+          {
+            copy: "Wahoo! Keep going."
+          });
+        }
+
+        else
+        {
+          this.setState(
+          {
+            copy: "You're really good at this!"
+          });
+        }
       }
     }
 
@@ -65,7 +97,7 @@ class App extends Component
       {
         score: 0,
         clickedCards: [],
-        copy: "You already picked that card! Bowser's going to get the Princes! Oh no!"
+        copy: "You already picked that card... Game over. Click a card to start again."
       });
     }
   }
@@ -75,25 +107,38 @@ class App extends Component
     return (
       <div>
         <Nav />
-        <Container>
-          <Row>
-            <Col size="m-12">
+        <Scoreboard
+          score={this.state.score}
+          topScore={this.state.topScore}
+        >
+        </Scoreboard>
+        <Messages
+          copy={this.state.copy}
+        >
+
+        </Messages>
+        <div className="container">
+          <div className="row">
+            <div size="col-md-12">
               <Cards>
                 {this.state.cards.map((cards, i) => {
-                  return <Card 
-                    id={cards.id}
-                    name={cards.name}
-                    url={cards.url}
-                    key={i}
-                    randomizer={this.randomizer}
-                    gameLogic={this.gameLogic}
-                ></Card>
+                  return (
+                    <Card 
+                      id={cards.id}
+                      name={cards.name}
+                      url={cards.url}
+                      key={i}
+                      randomizer={this.randomizer}
+                      gameLogic={this.gameLogic}
+                    >
+                    </Card>
+                  )
                 }
                 )}
               </Cards>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
