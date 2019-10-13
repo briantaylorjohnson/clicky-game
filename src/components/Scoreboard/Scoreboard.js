@@ -1,6 +1,7 @@
 import React from "react";
 import "./Scoreboard.css";
 
+// Creates a Scoreboard component using the score and top score props from App.js state
 function Scoreboard({
     score,
     topScore
@@ -17,4 +18,5 @@ function Scoreboard({
 );
 }
 
+// Exports Scoreboard component
 export default Scoreboard;

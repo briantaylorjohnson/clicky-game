@@ -1,11 +1,14 @@
 import React from "react";
 import "./Card.css";
 
+// Creates a <div> to hold the Super Mario cards 
 function Cards({children})
 {
     return <div className="card-group">{children}</div>
 }
 
+// Creates a Super Mario card using the props from the App.js passed from the JSON file
+// Also pulls in the randomizer and gamelogic functions as props and creates a single function (clicker) to invoke them on click
 function Card({
     id,
     name,
@@ -24,4 +27,5 @@ function Card({
     );
 }
 
+// Exports the Cards and Card functions
 export {Cards, Card};
