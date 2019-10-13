@@ -71,7 +71,7 @@ class App extends Component
           score: 0,
           clickedCards: [],
           topScore: 0,
-          copy: "Hooray! You are back to your new self again -- a winnner! Click a card to play again."
+          copy: "Hooray! You are back to your old self again -- a winnner! Click a card to play again."
         });
       }
 
