@@ -40,10 +40,11 @@ class App extends Component
       console.log("New Score: " + updatedScore);
       if (updatedScore === 12)
       {
+        console.log("Big winner!");
         this.setState(
         {
           score: 0,
-          alreadyGuessed: [],
+          clickedCards: [],
           copy: "Hooray! You are back to your new self again -- a winnner!"
         });
       }
@@ -63,7 +64,7 @@ class App extends Component
       this.setState(
       {
         score: 0,
-        alreadyGuessed: [],
+        clickedCards: [],
         copy: "You already picked that card! Bowser's going to get the Princes! Oh no!"
       });
     }
