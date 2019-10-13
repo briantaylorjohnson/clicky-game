@@ -1,0 +1,60 @@
+[
+    {
+        "id": "SMB-01",
+        "name": "Mario",
+        "url": "./images/cards/mario.png"
+    },
+    {
+        "id": "SMB-02",
+        "name": "Luigi",
+        "url": "./images/cards/luigi.png"
+    },
+    {
+        "id": "SMB-03",
+        "name": "Yoshi",
+        "url": "./images/cards/yoshi.png"
+    },
+    {
+        "id": "SMB-04",
+        "name": "Princess",
+        "url": "./images/cards/peach.png"
+    },
+    {
+        "id": "SMB-05",
+        "name": "Bowser",
+        "url": "./images/cards/bowser.png"
+    },
+    {
+        "id": "SMB-06",
+        "name": "Spiny",
+        "url": "./images/cards/spiny.png"
+    },
+    {
+        "id": "SMB-07",
+        "name": "Lakitu",
+        "url": "./images/cards/lakitu.png"
+    },
+    {
+        "id": "SMB-08",
+        "name": "Goomba",
+        "url": "./images/cards/goomba.png"
+    },
+    {
+        "id": "SMB-09",
+        "name": "Koopa Troopa",
+        "url": "./images/cards/koopa-troopa.png"
+    },
+    {"id": "SMB-10",
+        "name": "Cheep Cheep",
+        "url": "./images/cards/cheep-cheep.png"},
+    {
+        "id": "SMB-11",
+        "name": "Blooper",
+        "url": "./images/cards/blooper.png"
+    },
+    {
+        "id": "SMB-12",
+        "name": "Pirahna Plant",
+        "url": "./images/cards/pirahna-plant.png"
+    }
+]

@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from "react";
 import './App.css';
+import Nav from "./components/Nav";
+import {Cards, Card} from "./components/Card";
+import cards from "../src/cards.json"
+import { Container, Row, Col } from "./components/Grid";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component
+{
+  state = 
+  {
+    cards
+  };
+  
+  render()
+  {
+    return (
+      <div>
+        <Nav />
+        <Container>
+          <Row>
+            <Col size="m-12">
+              <Cards>
+                {this.state.cards.map((cards, i) => {
+                  return <Card 
+                    id={cards.id}
+                    name={cards.name}
+                    url={cards.url}
+                ></Card>
+                }
+                )}
+              </Cards>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default App;
